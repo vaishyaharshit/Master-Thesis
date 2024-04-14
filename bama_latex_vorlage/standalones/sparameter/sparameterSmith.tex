@@ -1,0 +1,57 @@
+% !TeX program = lualatex
+
+\documentclass[
+standalone
+]{../../bama}
+
+\input{../../header/headerMath}
+\input{../../header/headerTikz}
+
+\begin{document}
+
+%Support both paths to file
+\newcommand{\spfile}{filter.s2p} %path for compilation of only the graphic
+\IfFileExists{\spfile}{}{\renewcommand{\spfile}{standalones/sparameter/filter.s2p}} %path for main document
+
+%https://latex.org/forum/viewtopic.php?t=21133
+% Style to select only points from #1 to #2 (inclusive)
+\pgfplotsset{select coords between index/.style 2 args={
+		x filter/.code={
+			\ifnum\coordindex<#1\def\pgfmathresult{}\fi
+			\ifnum\coordindex>#2\def\pgfmathresult{}\fi
+		}
+}}
+
+\begin{tikzpicture}
+	\begin{smithchart}[show origin=false, height=.8\textwidth]
+		\addplot+[is smithchart cs, smooth, mark=none,
+		] table[col sep=space, skip first n=5,
+			x expr={10^(\thisrowno{1}/20)*cos(\thisrowno{2})},
+			y expr={10^(\thisrowno{1}/20)*sin(\thisrowno{2})}
+		]{\spfile}; \addlegendentry{$s_{11}$}
+		
+		\pgfplotsset{cycle list shift=-1}
+		\addplot+[is smithchart cs, smooth,
+			mark repeat=10, %only every n-th data point
+			mark phase=0,
+			only marks,
+			mark=x,
+			nodes near coords={$\SI[round-mode=places, round-precision=2]{\myvalue}{GHz}$},
+			visualization depends on={(\thisrowno{0}/1e9) \as \myvalue},
+			point meta=explicit,
+			every node near coord/.append style={
+				anchor=180, % angle for the label
+				%/pgf/number format/fixed zerofill,
+				%/pgf/number format/precision=1
+			},
+		] table[col sep=space, skip first n=5, select coords between index={978}{1018},
+			point meta={\thisrowno{0}/1e9},
+			x expr={10^(\thisrowno{1}/20)*cos(\thisrowno{2})},
+			y expr={10^(\thisrowno{1}/20)*sin(\thisrowno{2})}
+		]{\spfile};
+		
+	\end{smithchart}
+\end{tikzpicture}
+	
+% Further ’tikzpicture’ environments are possible which will create further pages.
+\end{document}

@@ -1,0 +1,57 @@
+%%% math mode
+%%% ---------
+
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\usepackage{lualatex-math}	% Lädt einige Korrekturen für amsmath, mathtools und weitere.
+
+%math font using unicode-math
+\IfFontExistsTF{TeX Gyre Termes Math}{
+	\setmathfont{TeX Gyre Termes Math}}{
+	\setmathfont{texgyretermes-math.otf}}
+
+%make normal text in math mode look like other text
+\IfFontExistsTF{TeX Gyre Termes}{
+	\setmathfont{TeX Gyre Termes}[range=\mathup/{latin,Latin,num,greek,Greek}]}{
+	\setmathfont{texgyretermes-regular.otf}[range=\mathup/{latin,Latin,num,greek,Greek}]}
+
+%custom mathematical symbols
+\AtBeginDocument{%
+	%upright partial derivation symbol
+	\let\umathpartial\partial
+	\renewcommand\partial{\symup\umathpartial}
+	
+	%upright letters for constants
+	\newcommand\jj{\operatorname{j}}
+	\newcommand\ii{\operatorname{i}}
+	\newcommand\ee{\operatorname{e}}
+	\newcommand\pipi{\uppi}
+	\let\jmath\jj
+	
+	%upright integral d
+	\newcommand\dd[1]{\,\operatorname{d}\!#1\xspace}
+	
+	%vector arrow
+	\newcommand{\vect}[1]{\overrightarrow{#1}}
+	
+	%upright grad, div, rot
+	\DeclareMathOperator{\grad}{grad}
+	\DeclareMathOperator{\diver}{div}
+	\DeclareMathOperator{\rot}{rot}
+	
+	%limits can be used with _ and ^ and are always placed above and unter the int sign
+	\let\intold\int
+	\removenolimits{\int}\removenolimits{\iint}\removenolimits{\iiint}
+	\removenolimits{\oint}\removenolimits{\oiint}\removenolimits{\oiiint}
+}
+
+\usepackage{esint}
+
+%numbers and units
+\ifgerman{
+	\usepackage[locale=DE, per-mode=symbol-or-fraction, detect-all=true]{siunitx}
+}
+\ifenglish{
+	\usepackage[per-mode=symbol-or-fraction, detect-all=true]{siunitx}
+}
+\usepackage{icomma} %correct spacing in german mode

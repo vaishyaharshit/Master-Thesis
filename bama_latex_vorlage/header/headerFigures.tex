@@ -1,0 +1,19 @@
+%%% figures
+%%% -------
+
+\usepackage{float}
+\usepackage{wrapfig}
+%\usepackage[hyperref=false]{scrhack} %solves komascript incompatibilities
+%\usepackage[countmax]{subfloat}
+\usepackage[section]{placeins} %ensure figures are in the correct section
+%\usepackage[format=hang]{caption}
+\usepackage{subcaption} %allow figures with subfigures
+
+% Standardargument für Platzierung von figures und tables kann hier global mit absteigender Priorität eingestellt werden.
+% Vorgabe: tbp (1. oben, 2. unten, 3. eigene Seite)
+% Weitere Möglichkeiten: h (hier), H (unbedingt hier)
+\makeatletter
+\renewcommand{\fps@figure}{htbp}
+\renewcommand{\fps@table}{htbp}  
+\makeatother
+% Ende Spezialanpassung figures

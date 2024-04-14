@@ -1,0 +1,62 @@
+{
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "quick",
+            "tools": [
+                "lualatex"
+            ]
+        },
+        {
+            "name": "full",
+            "tools": [
+                "lualatex",
+                "biber",
+                "lualatex",
+                "lualatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "makeindex",
+            "command": "makeindex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "--shell-escape",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.search.rootFiles.include": [],
+    "latex-workshop.chktex.enabled": true,
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.texcount.autorun": "onSave",
+    "latex-workshop.chktex.run": "onType",
+    "latex-workshop.hover.preview.mathjax.extensions": [
+        "mathtools",
+        "physics",
+        "cases",
+        "boldsymbol"
+    ]
+}

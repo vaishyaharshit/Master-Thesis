@@ -1,0 +1,50 @@
+%%% Tikz drawings
+%%% ------------
+
+\usepackage[mode=tex]{standalone}
+%\usepackage[mode=buildnew]{standalone}
+
+\usepackage{tikz}
+\usepackage{tikzsymbols}
+\usepackage[european,cuteinductors]{circuitikz}
+\usetikzlibrary{calc,arrows,patterns}
+
+% pgfplot
+\usepackage{pgfplots}
+\usepgfplotslibrary{smithchart}
+\usepgfplotslibrary{groupplots}
+
+%\pgfplotsset{compat=1.10}
+%\pgfplotsset{every tick label/.style={font={\scriptsize}}}
+%\pgfplotsset{every axis label/.style={font={\small}}}
+%\pgfplotsset{every legend /.style={font={\boldmath\small\bfseries}}}
+%\pgfplotsset{every label/.style={font={\boldmath\small\bfseries}}}
+
+\pgfplotsset{width=.8\textwidth}
+\pgfplotsset{height=.5\textwidth}
+\pgfplotsset{grid=both}
+\pgfplotsset{major tick style={thin,black}}% modifies the style ‘every tick’
+\pgfplotsset{minor tick style={very thin,black}}% modifies the style ‘every tick’
+\pgfplotsset{major grid style={thin}} %modifies the style ‘every major grid’
+\pgfplotsset{minor grid style={very thin}} % modifies the style ‘every minor tick’
+%\pgfplotsset{minor x tick num=1} %n minor ticks zwischen major ticks(major tiks müssen selben abstand haben) (problems with smithchart)
+%\pgfplotsset{minor y tick num=1} %n minor ticks zwischen major ticks(major tiks müssen selben abstand haben) (problems with smithchart)
+%\pgfplotsset{xlabel near ticks,ylabel near ticks}
+%For ylabel offsets:
+
+%For ylabel offsets:
+\pgfplotsset{ylabsh/.style={every axis y label/.style={at={(0,0.5)}, xshift=#1, rotate=90}}}
+\pgfplotsset{xlabsh/.style={every axis x label/.style={at={(0.5,0)}, yshift=#1}}}
+\pgfplotsset{filter discard warning=false}%disable filter warning using "each nth point"
+
+\pgfplotsset{every axis/.append style={line width=1pt}}
+
+%cycle list für plots, !!!! \addplot+ verwenden!
+%\pgfplotsset{
+%	cycle list={
+%		blue,
+%		red,
+%		{black, thick, dashed},
+%		violet
+%	}
+%} 

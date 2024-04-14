@@ -1,0 +1,40 @@
+% !TeX program = lualatex
+
+\documentclass[
+standalone
+]{../../bama}
+
+\input{../../header/headerMath}
+\input{../../header/headerTikz}
+
+\begin{document}
+
+%Support both paths to file
+\newcommand{\spfile}{filter.s2p} %path for compilation of only the graphic
+\IfFileExists{\spfile}{}{\renewcommand{\spfile}{standalones/sparameter/filter.s2p}} %path for main document
+
+\begin{tikzpicture}
+	\begin{axis}[
+		%width=.8\textwidth,
+		%height=.5\textwidth,
+		scale only axis,
+		xmin=130e9, xmax=160e9,
+		scaled x ticks={real:1e9},
+		xtick scale label code/.code={},
+		xtick distance = 5e9,
+		ymin=-24, ymax=0,
+		ytick distance = 3,
+		%minor tick num = 1,
+		%grid = both,
+		xlabel = {$f / (\si{\giga\hertz})$},
+		ylabel = {$1 / (\si{\decibel})$},
+		%height = .457\textwidth,
+		%width = .7\textwidth
+		]
+		\addplot+[smooth,mark=none] table[col sep=space, skip first n=3, x index=0, y index=1, mark=none]{\spfile}; \addlegendentry{$s_{11}$}
+		\addplot+[smooth,mark=none] table[col sep=space, skip first n=3, x index=0, y index=3, mark=none]{\spfile}; \addlegendentry{$s_{21}$}
+	\end{axis}
+\end{tikzpicture}
+	
+% Further ’tikzpicture’ environments are possible which will create further pages.
+\end{document}

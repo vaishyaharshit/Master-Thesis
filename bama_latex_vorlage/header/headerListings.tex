@@ -1,0 +1,36 @@
+%%% code listings
+%%% -------------
+
+% Farben definieren für package listings 
+%\usepackage{color}
+%\definecolor{middlegray}{rgb}{0.5,0.5,0.5}
+%\definecolor{lightgray}{rgb}{0.8,0.8,0.8}
+%\definecolor{orange}{rgb}{0.8,0.3,0.3}
+%\definecolor{yac}{rgb}{0.6,0.6,0.1}
+\definecolor{commentgreen}{rgb}{0,0.6,0.0}
+\definecolor{keyred}{RGB}{127,0,85}
+
+% Syntax highlighting
+\usepackage{listings}
+\usepackage{lstautogobble}
+\lstset{
+	basicstyle=\small\ttfamily,
+	%keywordstyle=\bfseries\ttfamily\color{red},
+	stringstyle=\color{purple}\ttfamily,
+	commentstyle=\color{teal}\ttfamily, %comments in green
+	numberstyle=\color{grey},
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	flexiblecolumns=false,
+	tabsize=2,
+	numbers=left, %line numbers
+	numberstyle=\tiny,
+	numberblanklines=true,
+	stepnumber=1,
+	numbersep=10pt,
+	xleftmargin=15pt,
+	breaklines=true, %line breaks
+	breakatwhitespace=true,
+	autogobble=true, %autoremove indention
+} 
