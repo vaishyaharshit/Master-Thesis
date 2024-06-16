@@ -1,0 +1,38 @@
+% !TeX program = lualatex
+
+\documentclass[
+standalone
+]{../../bama}
+
+\input{../../header/headerMath}
+\input{../../header/headerTikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+    % Instances/Symbols:
+    \node[vcc] at (2, 2) {V\textsubscript{CC}};
+    \draw (2, 0) to[empty diode, l=D1] (2, 2);
+    \draw (2, -2) to[empty diode, l=D2] (2, 0);
+    \node[rground] at (2, -2) {};
+    \draw (4, 0.5) to[capacitor, l=C] (4, -2);
+    \node[rground] at (4, -2) {};
+    \node[bnc] at (0.25, 0) {};
+
+    % Lines:
+    \draw (2, 2) -- (4, 2) -- (4, 0.5);
+    \draw (2, 0) -- (0, 0);
+
+    % Arrow indicating IEC Current
+    \draw[red, thick, ->] (0, 0.5) -- (1.6, 0.5);
+    \draw[red, thick] (1.6, 0.5) -- (1.6, 1.65);
+    \draw[red, thick, ->] (1.6, 1.65) -- (3.5, 1.65) -- (3.5, -1.5);
+
+    % Label for IEC Current
+    \node[red, above] at (0.2, 0.5) {ESD Signal};
+    \node at (2.3, 1) {};
+    %\draw[dashed] (1.7, 2.3) -- (1.7, -2.3) -- (2.3, -2.3) -- (2.3, 2.3) -- cycle;
+    
+\end{tikzpicture}
+
+\end{document}

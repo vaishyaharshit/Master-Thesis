@@ -20,43 +20,43 @@ english,
 ]{bama}
 
 %Authors firstname, put a space behind the name
-\firstname{Manfred }
+\firstname{Harshit}
 
 %Authors lastname
-\lastname{Mustermann}
+\lastname{Vaishya}
 
 %Type of thesis (Bachelorarbeit, Masterarbeit, Bachelor's Thesis, Master's Thesis)
-\thesis{Bachelorarbeit}
+\thesis{Master's Thesis}
 
 %Course, EEI/IuK/MT/...
-\course{Elektrotechnik, Elektronik und Informationstechnik (EEI)}
+\course{Information and Communication Technology}
 
 %Title of the work
-\title{Ein sehr sehr langer Titel, der mehrere Zeilen umspannt, wie sie bei Abschlussarbeiten häufiger vorkommen}
+\title{Development of a physiological sensor board to evaluate and transmit ECG data with hardware-accelerator, embedded AI and secure element}
 \subtitle{Untertitel der Arbeit}
 
 %Keywords saved in the metadata, put something like FPGA, SCPI, RADAR, ... (separate with ;)
-\keywords{keyword1; keyword2}
+\keywords{ECG; CNN; FILTERS; SECURE ELEMENT}
 
 %Names of tutors/Betreuer/supervisors including titles (seperate with ;)
 %Corresponding professor
-	%Prof. Dr.-Ing. Dr.-Ing. habil. Robert Weigel
-	%Prof. Dr.-Ing. Georg Fischer
+%Prof. Dr.-Ing. Dr.-Ing. habil. Robert Weigel
+%Prof. Dr.-Ing. Georg Fischer
 %team leader and/or group leader if primary tutor is not Akademischer Rat*in
-	%https://www.lte.tf.fau.de/lehrstuhl/person/
+%https://www.lte.tf.fau.de/lehrstuhl/person/
 %primary tutor
-\supervisor{Betreuer 1; Betreuer 2; Betreuer 3; Betreuer 4} %seperate with ;
+\supervisor{Prof. Dr.-Ing. Georg Fischer; Benedict Scheiner; Tobias Zech; Norman Pfeiffer} %seperate with ;
 
 %Begin date of thesis (format corresponding to the chosen language)
-\thesisbegin{01.01.1970}
+\thesisbegin{01.01.2024}
 
 %Same for the end
-\thesisend{09.02.2021}
+\thesisend{30.06.2024}
 
 %Month and year when thesis is handed in
 %required for financial stuff at the institute
-\thesisendmonth{2} %number of the month without leading 0 (1-12)
-\thesisendyear{2021}
+\thesisendmonth{6} %number of the month without leading 0 (1-12)
+\thesisendyear{2024}
 
 %Abstract for pdf metadata. This abstract will be visible in the archive of LTE and is visible in the metadata of the pdf output file. Avoid TeX here.
 \abstract{
@@ -102,26 +102,28 @@ english,
 	
 	%title page
 	\maketitle
-
+	
 	%declaration of own work...
 	\declaration
-
+	
 	%summary of the work
 	%(not as much result orientated as the summary at the end)
 	\input{chapter/abstract}
-
+	
 	%table of contents including heading
 	\tableofcontents
 	
 	%table with acronyms specified in the acronyms file and used in thesis
 	\printacronyms
-
+	
 	%arabic page numbering
 	\mainmatter
 	
 	%demonstration of LaTeX capabilities
-	\input{chapter/lte}
 
+	
+	
+	
 	%content of the thesis splitted in several chapters
 	
 	%Introduction
@@ -130,23 +132,14 @@ english,
 	%Motivation, context, task definition, own approach
 	\input{chapter/introduction}
 	
-	%Basics
-	%
-	%What do you need to know to understand the further chapters
-	%All necessary information for understanding the thesis
-	\input{chapter/basics}
+	\input{chapter/literature_survey}
 	
-	%State of the art
-	%
-	%What distinguishes your own approach from the state of the art?
-	%Presentation and discussion of the competing solution approaches
-	\input{chapter/stateofart}
-	
-	%Methods
+	\include{chapter/system_design_and_development}
+		%Methods
 	%
 	%How is the approach implemented and checked?
 	%All necessary information for the reproduction
-	\input{chapter/methods}
+	%\input{chapter/methods}
 	
 	%Results
 	%
@@ -160,16 +153,31 @@ english,
 	%Discussion of successes, limitations and explanatory approaches
 	%Next steps to be taken
 	\input{chapter/discussion}
+	
+	
+	%\input{chapter/lte}
+	%Basics
+	%
+	%What do you need to know to understand the further chapters
+	%All necessary information for understanding the thesis
+	%\input{chapter/basics}
+	
+	%State of the art
+	%
+	%What distinguishes your own approach from the state of the art?
+	%Presentation and discussion of the competing solution approaches
+	%\input{chapter/stateofart}
+	
 
 	{\backmatter
-	
-	% Literatur-, Abbildungs-, Tabellenverzeichnis
-	\printbibliography
-	\listoffigures
-	\listoftables
-
-	%if you want to include a cv
-	%\include{chapter/cv}
+		
+		% Literatur-, Abbildungs-, Tabellenverzeichnis
+		\printbibliography
+		\listoffigures
+		\listoftables
+		
+		%if you want to include a cv
+		%\include{chapter/cv}
 	}
 	
 	%different section numbering with letters
@@ -177,5 +185,5 @@ english,
 	
 	%appendix content, e.g. long derivations, lots of plots, ...
 	\include{chapter/appendix}
-
+	
 \end{document}

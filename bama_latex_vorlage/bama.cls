@@ -60,10 +60,13 @@
 	twoside,
 	fontsize=12pt,
 	numbers=noenddot,
-	openright,				% Kapitel beginnt auf rechter Seite
-	titlepage,				% Titelblatt auf eigener Seite
+	openright,				% Kapitel beginnt    
+	rechter Seite
+	titlepage,				% Titelblatt auf eigener 
+	Seite
 	bibliography=totoc,		% Literaturverzeichnis
-	listof=totoc			% Listen ins Inhaltsverzeichnis
+	listof=totoc			% Listen ins 
+	Inhaltsverzeichnis
 	]{scrbook}
 }
 

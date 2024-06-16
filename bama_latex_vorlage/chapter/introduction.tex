@@ -1,22 +1,56 @@
 % !TeX root = ../thesis.tex
 
-\ifgerman{\chapter{Einleitung}}
-\ifenglish{\chapter{Introduction}}
-	\label{sec:Einleitung}
-	\pagestyle{scrheadings}
+\chapter{Introduction}
+\label{chap:introduction}
 
-	\ifgerman{\section{Motivation}}
-	\ifenglish{\section{Motivation}}
-		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+The development of the first ECG machine in the Netherlands by Willem Einthoven marked the beginning of a revolution in monitoring cardiac activity. As of 2023, cardiovascular diseases, particularly \ac{IHD}, are among the top \ac{NCDs} , resulting in approximately 18 million deaths worldwide annually~\cite{who2023}. Cardiac arrhythmias, which include conditions such as premature ventricular and atrial contractions, \ac{AF}, ventricular fibrillation, and atrial flutter, are common and significant due to their association with increased risk of severe cardiovascular events like strokes, heart failure, and coronary artery disease~\cite{sharma2018, liu2021}. Atrial fibrillation, in particular, is a leading cause of mortality as it complicates the detection and management of cardiovascular conditions~\cite{liu2021}. \ac{ECG} play a crucial role in the diagnosis and management of arrhythmias, using waveforms to provide essential first-hand information on cardiac function under various conditions. Timely and accurate ECG monitoring is thus critical for the effective treatment of cardiovascular diseases.
 
-		Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+\section{Motivation}
 
-		Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+\subsection{Diagnostic Challenges and Limitations of Traditional ECG Monitoring}
 
-		Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+Since Einthoven's pioneering work, ECG technology has undergone substantial evolution. However, the 12-lead ECG system remains the gold standard for recording cardiac waveforms. This system uses ten electrodes: six are placed on the chest (V1 to V6) and four on the limbs. Depending on the electrode combination, twelve different lead signals can be captured for diagnosing conditions such as atrial fibrillation~\cite{liu2021}. Traditionally, these 12-lead ECGs have been instrumental in diagnosing AF, requiring skilled physicians to record and interpret the results accurately. However, AF can often be asymptomatic, making it challenging to detect since symptoms may not be present during standard ECG tests~\cite{page2003}. Additionally, the intermittent nature of AF necessitates extended monitoring, which is impractical with the cumbersome 12-lead setup due to discomfort and complexity, especially for long-term wear~\cite{liu2021}. Consequently, this reliance on healthcare professionals for interpretation also delays timely intervention, making the process expensive and logistically challenging for many patients.
 
-		Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
+\subsection{The Evolution of IoT and Continuous Monitoring in Cardiac Care}
 
-    \ifgerman{\section{Aufgabenstellung}}
-    \ifenglish{\section{Objective}}
-		At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+The integration of \ac{IoT} technologies in healthcare represents a significant advancement in medical monitoring. IoT-enabled ECG systems are now capable of continuously sensing cardiac signals and transmitting the raw data to cloud-based or remote servers for further analysis. This shift has the potential to automate the detection of AF using advanced machine learning algorithms, substantially reducing the time and cost associated with traditional diagnostic methods. However, these systems often rely on high-energy-consumption wireless communication technologies such as Zigbee and Bluetooth, leading to devices that are power-intensive and not ideal for continuous, long-term monitoring~\cite{muhoza2023}.
+
+\subsection{Advancing ECG Architecture with Embedded Edge AI}
+
+The pursuit of personalized medicine increasingly demands technologies that enable reliable, comfortable, and affordable monitoring of heart activity in everyday settings. Addressing the challenges of power consumption and patient comfort requires advancing the medical sensing architecture. Recent advancements in microcontroller capabilities and the advent of sophisticated deep learning algorithms allow for running compact AI models directly on microcontrollers~\cite{muhoza2023}. This study aims to develop a cost-effective, two-electrode (single-lead) ECG system for efficient R peak detection, which simplifies continuous monitoring. Furthermore, by leveraging edge AI technology, the system can locally process data to detect abnormalities in real time, thereby reducing power consumption and enhancing the feasibility of long-term cardiac health monitoring.
+
+\section{Scope of the Thesis}
+
+This thesis focuses on developing a physiological sensor board for the acquisition of ECG signals and classifying heart abnormalities at the edge. The project aims to provide a simple and cost-efficient method for acquiring ECG signals, enhancing the security and usability of ECG monitoring, and detecting abnormalities through the integration of hardware-accelerated embedded AI and a secure element. This thesis proposes a new architecture that can significantly improve medical sensing technology, making the sensing process easier, faster, and more power-efficient.
+
+\subsection{Detailed Objectives}
+
+\begin{itemize}
+	\item \textbf{ECG System Development:} The thesis designed a compact, two-electrode ECG system optimized for user comfort and simplicity, making it suitable for long-term continuous monitoring.
+	\item \textbf{Embedded AI Integration:} Embedded \ac{AI} was implemented using the Maxim78000 platform to process ECG data on-device, reducing dependency on remote processing and aiming to improve the speed and reliability of cardiac abnormality detection.
+	\item \textbf{Security Implementation:} The Infineon OPTIGA Trust M secure element was utilized to ensure all patient data is encrypted, addressing the critical need for privacy and security in healthcare applications.
+	\item \textbf{Energy Efficiency Analysis:} The system's power consumption was evaluated and optimized to extend battery life, which is essential for continuous monitoring applications.
+\end{itemize}
+
+\subsection{Delimitation}
+
+The research focused on the development and initial testing of the ECG monitoring system within a lab environment and did not include commercial product development or explore the regulatory aspects of medical device approval.
+
+\section{Outline of the Thesis}
+
+This thesis is organized into the following chapters:
+
+\begin{enumerate}
+	\item \textbf{Chapter 1: Introduction} \\
+	Introduces the research background, problem statement, objectives, and scope of the thesis.
+	\item \textbf{Chapter 2: Literature Review} \\
+	Reviews the physiological generation of heart signals, existing technologies, methodologies, and different architectures used in ECG monitoring. It also examines microcontrollers capable of running edge AI algorithms, comparing their energy consumption and computational capabilities, and discusses the importance of security in medical sensing.
+	\item \textbf{Chapter 3: System Design and Development} \\
+	Discusses the hardware and software design architecture of the complete physiological sensor board for ECG, covering everything from PCB design—including circuit design, filter design, \ac{ADC} conversion, data transfer—to component selection and integration of the Maxim78000 edge AI and Infineon secure element.
+	\item \textbf{Chapter 4: Implementation and Testing} \\
+	Describes the experimental setup and methodologies used for performance and security testing, detailing the implementation of the neural network on the Maxim78000 and the integration steps involved.
+	\item \textbf{Chapter 5: Results and Discussion} \\
+	Presents experimental results and analyzes the performance of the system in terms of energy efficiency, power consumption, and accuracy. It discusses the findings in the context of existing technologies and the theoretical framework established in earlier chapters.
+	\item \textbf{Chapter 6: Conclusions and Future Work} \\
+	Summarizes the research, evaluates the achievements relative to the original goals, and suggests future research directions to further enhance the system’s capabilities.
+\end{enumerate}

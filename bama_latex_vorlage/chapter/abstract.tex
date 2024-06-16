@@ -14,6 +14,17 @@
 \chapter*{Abstract}
 \label{sec:abstract}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Ischemic heart diseases are currently a leading cause of mortality worldwide, responsible for approximately 16\% of total global deaths. This underscores the importance of timely detection of heart rate variabilities in reducing mortality rates. Current techniques for detecting heart rate variabilities involve extracting RAW ECG data and transmitting it to remote or cloud servers for further analysis. However, this approach is inconvenient for continuous monitoring as it results in significant power consumption.
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet.
+\vspace{1em}
+
+\noindent Over the past decade, the \ac{IoT} has become increasingly integrated into our daily lives. Everything from TVs, speakers, and toys, to appliances is now connected to the internet. With the rapid increase in \ac{IoT} data and the emergence of AI, there's an opportunity for edge intelligence. Integrating edge AI with IoT can bring additional benefits to systems, such as reduced power consumption, lower latency, bandwidth optimization, and enhanced data security.
+
+\vspace{1em}
+
+\noindent Designing an end-to-end device for recording \ac{ECG} and predicting heart rate variability on the edge, while ensuring user data security through encryption, is the focus of this thesis. In this regard, a simple, cost-efficient analog circuit PCB is designed to detect the R-peaks of ECG, and a method for translating and deploying neural network models on embedded devices using MAX78000 APIs is presented. Additionally, a secure element is interfaced with the device to enhance its safety features. 
+
+\vspace{1em}
+
+
+\noindent The extracted ECG signals are further compared with off-the-shelf ECG Holter monitors in terms of R-peak detection. Furthermore, a comparison is made in terms of power and energy consumption between transmitting ECG raw data to a remote server via Bluetooth and performing edge computation for heart rate variability detection.

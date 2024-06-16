@@ -1,0 +1,30 @@
+% !TeX program = lualatex
+
+\documentclass[
+standalone
+]{../../bama}
+
+\input{../../header/headerMath}
+\input{../../header/headerTikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+    % Instances/Symbols:
+    \draw (7, -8) to[battery1, l=VPH] (8, -8);
+    \draw (8.75, -7) to[american resistor, l=$R_p$] (10.25, -7);
+    \draw (11, -8) to[american resistor, l=$R_s$] (12.5, -8);
+    \draw (9.25, -9) to[capacitor, l=$C_p$] (9.75, -9);
+
+    % Lines:
+    \draw (8, -8) -- (8.5, -8) |- (8.75, -7);
+    \draw (8.5, -8) -- (8.5, -9) -- (8.75, -9);
+    \draw (10.25, -7) -- (10.5, -7) -- (10.5, -9) -- (10.25, -9);
+    \draw (11, -8) -- (10.5, -8);
+    \draw (7, -8) -- (6.5, -8);
+    \draw (12.5, -8) -- (13, -8);
+    \draw (8.75, -9) -- (9.25, -9);
+    \draw (9.75, -9) -- (10.5, -9);
+\end{tikzpicture}
+					
+\end{document}

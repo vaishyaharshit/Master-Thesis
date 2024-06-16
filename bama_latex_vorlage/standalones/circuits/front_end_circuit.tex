@@ -1,0 +1,28 @@
+% !TeX program = lualatex
+
+\documentclass[
+standalone
+]{../../bama}
+
+\input{../../header/headerMath}
+\input{../../header/headerTikz}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=.8,transform shape]
+	\draw  (0,0)coordinate[rground](start) to [vsourcesin,v<=$u_e$] ++(0,3) to [R,l=$R_1$] ++(4,0) coordinate[circ](knoten1) to [R,l=$R_3$]++(4,0) coordinate[circ](knoten2) --++(1,0) node[op amp,anchor=-](opv){};
+	\draw (knoten1) to [C,l=$C_2$] (knoten1|-start) coordinate[rground];
+	\draw (knoten2) to [C,l=$C_1$] ++(0,3) coordinate[circ](knoten3);
+	\draw (knoten1) to [R,l=$R_2$] ++(0,3) -- (knoten3);
+	\draw (opv.out) -- ++(1,0) |- (knoten3);
+	\draw (opv.+) -- ++(-1,0) coordinate(hlpco) -- (hlpco|-start) coordinate[rground];
+	\draw (opv.out)++(1,0) to [short,*-o]++(1,0) coordinate(out);
+	\draw  [->,shorten >=1ex,shorten <=1ex,thick] (out) -- (out|-start) node[left,midway] {\Large$u_a$};
+	\draw (out|-start) coordinate[rground] coordinate[ocirc];
+
+	\draw (knoten1) node[above left]{$\varphi_1$};
+	\draw (knoten2) node[above left]{$\varphi_2$};
+\end{tikzpicture}
+					
+% Further ’tikzpicture’ environments are possible which will create further pages.
+\end{document}

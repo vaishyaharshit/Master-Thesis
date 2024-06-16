@@ -1,0 +1,33 @@
+% !TeX program = lualatex
+
+\documentclass[
+standalone
+]{../../bama}
+
+\input{../../header/headerMath}
+\input{../../header/headerTikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+    % Instances/Symbols:
+    \draw (9, -8) to[stroke ZZener diode, l=Z1] (9, -9.5);
+    \draw (11, -8) to[empty diode, l=D1] (11, -6.5);
+    \draw (11, -9.5) to[empty diode, l=D2] (11, -8);
+    \node at (12.5, -8) {ECG\_L};
+    \node[vcc] at (11, -6.5) {};
+    \node[rground] at (11, -9.25) {};
+    \draw (11, -11.5) to[empty diode, l=D3] (11, -10.25);
+    \draw (11, -12.75) to[empty diode, l=D4] (11, -11.5);
+    \draw (7, -9) to[american voltage source, l=ECG] (7, -10.75);
+    \node[vcc] at (11, -10.25) {};
+    \node[rground] at (11, -12.75) {};
+    \draw (9, -11.5) to[stroke ZZener diode, l=Z2] (9, -9.5);
+    \node at (12.5, -11.5) {ECG\_R};
+
+    % Lines:
+    \draw (7, -9) -- (7, -8) -- (11.75, -8);
+    \draw (7, -10.75) -- (7, -11.5) -- (11.75, -11.5);
+\end{tikzpicture}
+
+\end{document}

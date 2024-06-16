@@ -1,0 +1,37 @@
+% !TeX program = lualatex
+
+\documentclass[
+standalone
+]{../../bama}
+
+\input{../../header/headerMath}
+\input{../../header/headerTikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+    % Instances/Symbols:
+    \draw (12, -6.5) to[capacitor, l=C1] (10.25, -6.5);
+    \draw (12, -8) to[capacitor, l=C2] (10.25, -8);
+    \draw (12, -6) to[american resistor, l=R1] (12, -4.25);
+    \draw (12, -8.5) to[american resistor, l=R2] (12, -9.75);
+    \node[rground, rotate=180, label=right:Ref] at (12, -4.25) {};
+    \node[rground, label=right:Ref] at (12, -10) {};
+    \node[bnc, anchor=east] at (9.75, -6.5) {ECG\_L};
+    \node[bnc, anchor=east] at (9.75, -8) {ECG\_R};
+    \node[bnc, anchor=west] at (13.5, -6.5) {};
+    \node[bnc, anchor=west] at (13.5, -8) {};
+
+    % Lines:
+    \draw (12, -6.5) -- (13.5, -6.5) -- (13.25, -6.5);
+    \draw (12, -8) -- (13.5, -8);
+    \draw (10.25, -6.5) -- (9.5, -6.5);
+    \draw (10.25, -8) -- (9.5, -8);
+    \draw (12, -6.5) -- (12, -6);
+    \draw (12, -8) -- (12, -8.5);
+    \draw (12, -4.25) -- (12, -4);
+    \draw (12, -9.75) -- (12, -10);
+    \draw (12, -10) -- (12, -9.75);
+\end{tikzpicture}
+
+\end{document}
